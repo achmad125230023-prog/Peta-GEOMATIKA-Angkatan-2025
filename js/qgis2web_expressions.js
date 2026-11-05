@@ -757,20 +757,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_PersebaranTempatTinggal_1rule0_eval_expression(context) {
-    // STATUS = 'Kontrakan'
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return (feature.properties['STATUS']  == 'Kontrakan');
-    } else {
-        return (feature['STATUS']  == 'Kontrakan');
-    }
-}
-
-
-function exp_PersebaranTempatTinggal_1rule1_eval_expression(context) {
+function exp_PersebatanTitik_1rule0_eval_expression(context) {
     // STATUS = 'Kos'
 
     var feature = context.feature;
@@ -783,7 +770,20 @@ function exp_PersebaranTempatTinggal_1rule1_eval_expression(context) {
 }
 
 
-function exp_PersebaranTempatTinggal_1rule2_eval_expression(context) {
+function exp_PersebatanTitik_1rule1_eval_expression(context) {
+    // STATUS = 'Kontrakan'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['STATUS']  == 'Kontrakan');
+    } else {
+        return (feature['STATUS']  == 'Kontrakan');
+    }
+}
+
+
+function exp_PersebatanTitik_1rule2_eval_expression(context) {
     // STATUS = 'Rumah'
 
     var feature = context.feature;
