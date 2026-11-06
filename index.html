@@ -1152,6 +1152,15 @@ legendaPeta.addTo(map);
       <p>Visualisasi Spasial Interaktif</p>
     </div>
   </div>
+<!-- =====================================================================
+  PEMOLES TAMPILAN UNTUK HASIL EKSPOR qgis2web (Leaflet)
+  CARA PAKAI:
+  1. Salin dulu index.html sebagai cadangan (index-backup.html).
+  2. Buka index.html, tempel SELURUH isi file ini tepat SEBELUM tag </body> paling bawah.
+  3. Ubah JUDUL / SUBJUDUL di bagian "KONFIGURASI" di bawah.
+  4. Simpan, buka lewat Live Server / localhost.
+  Aman dipakai bersama dashboard-qgis2web.html (tempel keduanya).
+====================================================================== -->
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -1165,13 +1174,13 @@ body.pm-dark{
   --pm-line:rgba(255,255,255,.12); --pm-shadow:0 10px 30px rgba(0,0,0,.55);
 }
 body, .leaflet-container{font-family:'Poppins',system-ui,sans-serif!important}
- 
+
 /* ---------- 2. ANIMASI ---------- */
 @keyframes pmFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes pmPop{from{opacity:0;transform:scale(.88) translateY(8px)}to{opacity:1;transform:none}}
 @keyframes pmSpin{to{transform:rotate(360deg)}}
 @keyframes pmSlideDown{from{opacity:0;transform:translate(-50%,-30px)}to{opacity:1;transform:translate(-50%,0)}}
- 
+
 /* ---------- 3. SPLASH SCREEN ---------- */
 #pmSplash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;color:#fff;
   background:linear-gradient(135deg,var(--pm-a),var(--pm-b));transition:opacity .7s,visibility .7s}
@@ -1179,7 +1188,7 @@ body, .leaflet-container{font-family:'Poppins',system-ui,sans-serif!important}
 #pmSplash .ring{width:56px;height:56px;margin:0 auto 16px;border:5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:pmSpin .9s linear infinite}
 #pmSplash b{display:block;font-size:20px;text-align:center}
 #pmSplash span{display:block;font-size:13px;opacity:.85;text-align:center;margin-top:2px}
- 
+
 /* ---------- 4. BANNER JUDUL ---------- */
 #pmTitle{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:1150;max-width:min(560px,calc(100vw - 150px));
   padding:9px 22px;border-radius:99px;text-align:center;background:var(--pm-glass);color:var(--pm-text);
@@ -1187,7 +1196,7 @@ body, .leaflet-container{font-family:'Poppins',system-ui,sans-serif!important}
   border:1px solid var(--pm-line);animation:pmSlideDown .7s .3s both}
 #pmTitle b{display:block;font-size:14px;line-height:1.2;background:linear-gradient(90deg,var(--pm-a),var(--pm-b));-webkit-background-clip:text;background-clip:text;color:transparent}
 #pmTitle span{font-size:11px;color:var(--pm-muted)}
- 
+
 /* ---------- 5. KONTROL LEAFLET BERGAYA KACA ---------- */
 .leaflet-bar,.leaflet-control-layers,.leaflet-control-scale-line,.leaflet-control-attribution,
 .leaflet-control-search,.leaflet-control-geocoder,.leaflet-control-measure{
@@ -1196,7 +1205,7 @@ body, .leaflet-container{font-family:'Poppins',system-ui,sans-serif!important}
 .leaflet-bar{border-radius:14px!important;overflow:hidden;background:var(--pm-glass)}
 .leaflet-bar a,.leaflet-bar a:hover{background:transparent!important;color:var(--pm-text)!important;border-bottom:1px solid var(--pm-line)!important;transition:.2s}
 .leaflet-bar a:hover{background:linear-gradient(135deg,var(--pm-a),var(--pm-b))!important;color:#fff!important}
- 
+
 /* kontrol layer (daftar layer + legenda bawaan qgis2web) */
 .leaflet-control-layers{background:var(--pm-glass)!important;color:var(--pm-text)!important;border-radius:16px!important;
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);animation:pmFadeUp .6s .4s both}
@@ -1206,12 +1215,12 @@ body, .leaflet-container{font-family:'Poppins',system-ui,sans-serif!important}
 .leaflet-control-layers input{accent-color:var(--pm-a)}
 .leaflet-control-layers-separator{border-top:1px solid var(--pm-line)!important}
 .leaflet-control-layers img{vertical-align:middle;border-radius:3px}
- 
+
 /* skala & atribusi */
 .leaflet-control-scale-line{background:var(--pm-glass)!important;color:var(--pm-text)!important;border-radius:0 0 8px 8px;font-size:11px}
 .leaflet-control-attribution{background:var(--pm-glass)!important;color:var(--pm-muted)!important;border-radius:10px 0 0 0;font-size:10px;backdrop-filter:blur(8px)}
 .leaflet-control-attribution a{color:var(--pm-b)!important}
- 
+
 /* kotak pencarian (leaflet-search / geocoder bawaan qgis2web) */
 .leaflet-control-search,.leaflet-control-geocoder{background:var(--pm-glass)!important;border-radius:99px!important;overflow:hidden;backdrop-filter:blur(12px)}
 .leaflet-control-search input,.leaflet-control-geocoder-form input{border:none!important;outline:none!important;background:transparent!important;
@@ -1219,9 +1228,11 @@ body, .leaflet-container{font-family:'Poppins',system-ui,sans-serif!important}
 .leaflet-control-search .search-tooltip{background:var(--pm-glass)!important;border-radius:14px;overflow:hidden;box-shadow:var(--pm-shadow);border:1px solid var(--pm-line)}
 .leaflet-control-search .search-tip{color:var(--pm-text)!important;border-radius:8px!important;margin:2px 4px;transition:.2s}
 .leaflet-control-search .search-tip-select,.leaflet-control-search .search-tip:hover{background:linear-gradient(90deg,var(--pm-a),var(--pm-b))!important;color:#fff!important}
- 
+
 /* ---------- 6. POPUP MODERN ---------- */
-.leaflet-popup{animation:pmPop .3s cubic-bezier(.2,.8,.2,1) both}
+/* PENTING: jangan beri animasi/transform pada .leaflet-popup atau .leaflet-marker-icon,
+   karena Leaflet memakai transform untuk menaruhnya di koordinat titik. Animasikan elemen dalamnya saja. */
+.leaflet-popup-content-wrapper{animation:pmPop .3s cubic-bezier(.2,.8,.2,1) both;transform-origin:50% 100%}
 .leaflet-popup-content-wrapper{background:var(--pm-glass)!important;color:var(--pm-text)!important;border-radius:16px!important;
   padding:0!important;overflow:hidden;box-shadow:var(--pm-shadow)!important;backdrop-filter:blur(12px)}
 .leaflet-popup-tip{background:var(--pm-glass)!important}
@@ -1235,16 +1246,16 @@ body, .leaflet-container{font-family:'Poppins',system-ui,sans-serif!important}
 .leaflet-container a.leaflet-popup-close-button:hover{transform:rotate(90deg)}
 .leaflet-tooltip{background:var(--pm-glass)!important;color:var(--pm-text)!important;border:1px solid var(--pm-line)!important;
   border-radius:10px!important;box-shadow:var(--pm-shadow)!important;font-family:inherit}
- 
+
 /* ---------- 7. EFEK HOVER PADA FITUR PETA ---------- */
 path.leaflet-interactive{transition:fill-opacity .25s,stroke-width .25s,filter .25s}
 path.leaflet-interactive:hover{filter:brightness(1.12) drop-shadow(0 0 6px rgba(0,0,0,.45));fill-opacity:.85}
-.leaflet-marker-icon{transition:transform .2s,filter .2s}
+.leaflet-marker-icon{transition:filter .2s}
 .leaflet-marker-icon:hover{filter:drop-shadow(0 4px 8px rgba(0,0,0,.45));z-index:9999!important}
- 
+
 /* ---------- 8. MODE GELAP (membalik warna ubin peta) ---------- */
 body.pm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.9)}
- 
+
 /* ---------- 9. TOMBOL ALAT (kanan) ---------- */
 #pmTools{position:fixed;right:12px;top:64px;z-index:1150;display:flex;flex-direction:column;gap:8px;animation:pmFadeUp .6s .5s both}
 #pmTools button{width:42px;height:42px;border:1px solid var(--pm-line);border-radius:13px;font-size:17px;cursor:pointer;
@@ -1253,15 +1264,15 @@ body.pm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.
 #pmTools button::after{content:attr(data-tip);position:absolute;right:50px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:11px;
   padding:4px 10px;border-radius:8px;background:var(--pm-text);color:var(--pm-glass);opacity:0;pointer-events:none;transition:.2s}
 #pmTools button:hover::after{opacity:1}
- 
+
 /* ---------- 10. LENCANA ZOOM & KOORDINAT ---------- */
 #pmInfo{position:fixed;left:50%;bottom:34px;transform:translateX(-50%);z-index:1150;padding:6px 16px;border-radius:99px;font-size:11.5px;
   background:var(--pm-glass);color:var(--pm-text);backdrop-filter:blur(12px);box-shadow:var(--pm-shadow);border:1px solid var(--pm-line);
   font-variant-numeric:tabular-nums;animation:pmFadeUp .6s .6s both}
- 
+
 @media(max-width:700px){#pmTitle span,#pmInfo{display:none}#pmTitle{max-width:calc(100vw - 130px)}}
 </style>
- 
+
 <!-- ---------- ELEMEN HTML ---------- -->
 <div id="pmSplash"><div><div class="ring"></div><b id="pmSplashT">WebGIS</b><span>Memuat peta &amp; data…</span></div></div>
 <div id="pmTitle"><b id="pmT1">WebGIS</b><span id="pmT2"></span></div>
@@ -1272,41 +1283,41 @@ body.pm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.
   <button data-tip="Mode gelap" id="pmDark">☾</button>
 </div>
 <div id="pmInfo">Zoom 0 · arahkan kursor ke peta</div>
- 
+
 <script>
 (function(){
   /* ============ KONFIGURASI — UBAH DI SINI ============ */
   var JUDUL    = 'Peta Persebaran Tempat Tinggal';
   var SUBJUDUL = 'Teknik Geomatika · Angkatan 2025';
   /* ======================================================= */
- 
+
   var $ = function(id){ return document.getElementById(id); };
   $('pmT1').textContent = JUDUL; $('pmT2').textContent = SUBJUDUL; $('pmSplashT').textContent = JUDUL;
- 
+
   // tutup splash setelah semua aset termuat
   window.addEventListener('load', function(){ setTimeout(function(){ $('pmSplash').classList.add('hide'); }, 800); });
   setTimeout(function(){ $('pmSplash').classList.add('hide'); }, 5000);   // jaga-jaga bila load lama
- 
+
   // tunggu variabel `map` dari qgis2web
   var tries = 0, t = setInterval(function(){
     tries++;
     if (window.map && window.L){ clearInterval(t); init(window.map); }
     else if (tries > 40) clearInterval(t);
   }, 250);
- 
+
   function init(map){
     var home = { c: map.getCenter(), z: map.getZoom() };
- 
+
     // lencana zoom & koordinat
     var last = '';
     function upd(){ $('pmInfo').textContent = 'Zoom ' + map.getZoom() + (last ? ' · ' + last : ' · arahkan kursor ke peta'); }
     map.on('zoomend', upd);
     map.on('mousemove', function(e){ last = e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5); upd(); });
     upd();
- 
+
     // tombol: tampilan awal
     $('pmHome').onclick = function(){ map.flyTo(home.c, home.z, { duration: 1.4 }); };
- 
+
     // tombol: lokasi saya
     var me;
     $('pmLoc').onclick = function(){ map.locate({ setView:true, maxZoom:17 }); };
@@ -1315,13 +1326,13 @@ body.pm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.
       me = L.circleMarker(e.latlng, { radius:8, color:'#fff', weight:3, fillColor:'#ef4444', fillOpacity:1 }).addTo(map).bindPopup('Lokasi Anda').openPopup();
     });
     map.on('locationerror', function(){ alert('Lokasi tidak dapat diakses. Periksa izin browser.'); });
- 
+
     // tombol: layar penuh
     $('pmFull').onclick = function(){
       if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
       else document.exitFullscreen();
     };
- 
+
     // tombol: mode gelap (ingat pilihan pengguna)
     function setDark(on){
       document.body.classList.toggle('pm-dark', on);
