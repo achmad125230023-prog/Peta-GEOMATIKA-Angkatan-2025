@@ -1249,7 +1249,7 @@ body, .leaflet-container{font-family:'Poppins',system-ui,sans-serif!important}
 
 /* ---------- 7. EFEK HOVER PADA FITUR PETA ---------- */
 path.leaflet-interactive{transition:fill-opacity .25s,stroke-width .25s,filter .25s}
-path.leaflet-interactive:hover{filter:brightness(1.12) drop-shadow(0 0 6px rgba(0,0,0,.45));fill-opacity:.85}
+path.leaflet-interactive:hover{filter:brightness(1.12) drop-shadow(0 0 6px rgba(0, 0, 0, 0.45));fill-opacity:.85}
 .leaflet-marker-icon{transition:filter .2s}
 .leaflet-marker-icon:hover{filter:drop-shadow(0 4px 8px rgba(0,0,0,.45));z-index:9999!important}
 
@@ -1344,3 +1344,117 @@ body.pm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.
   }
 })();
 </script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>WebGIS dengan Legenda Peta</title>
+  
+  <!-- FontAwesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Style untuk Kotak Legenda Peta */
+    .map-legend {
+      position: fixed !important;
+      bottom: 24px;
+      right: 20px;
+      z-index: 9999 !important; /* Agar selalu di atas peta */
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 14px 18px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+      font-family: 'Inter', sans-serif;
+      min-width: 170px;
+      pointer-events: auto;
+    }
+
+    .legend-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-title i {
+      color: #3b82f6;
+    }
+
+    .legend-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    /* Lingkaran Simbol Warna Legenda */
+    .color-box {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+
+    .bg-kontrakan {
+      background-color: #ef4444; /* Merah */
+      border: 2px solid #b91c1c;
+    }
+
+    .bg-kos {
+      background-color: #22c55e; /* Hijau */
+      border: 2px solid #15803d;
+    }
+
+    .bg-rumah {
+      background-color: #3b82f6; /* Biru */
+      border: 1px solid #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- KOTAK LEGENDA PETA (Letakkan di bawah tag <body>) -->
+  <div class="map-legend">
+    <div class="legend-title">
+      <i class="fa-solid fa-layer-group"></i> Legenda Peta
+    </div>
+    <ul class="legend-list">
+      <li class="legend-item">
+        <span class="color-box bg-kontrakan"></span>
+        <span>Kontrakan</span>
+      </li>
+      <li class="legend-item">
+        <span class="color-box bg-kos"></span>
+        <span>Kos</span>
+      </li>
+      <li class="legend-item">
+        <span class="color-box bg-rumah"></span>
+        <span>Rumah</span>
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>
