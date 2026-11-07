@@ -36,11 +36,11 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/PersebatanTitik_1.js"></script>
+        <script src="data/PersebaranTitik_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-5.371275321280474,105.30000294013847],[-5.355990961008325,105.32822890831127]]);
+        }).fitBounds([[-5.536157541014562,105.03633898884037],[-5.224913181017927,105.6086041871069]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -127,13 +127,15 @@
         var layer_GoogleSatellite_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
             pane: 'pane_GoogleSatellite_0',
             opacity: 1.0,
-            attribution: '',
+            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
             minZoom: 1,
             maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        function pop_PersebatanTitik_1(feature, layer) {
+        function pop_PersebaranTitik_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">X</th>\
@@ -162,60 +164,60 @@
 			});
 			layer.bindPopup(content, { maxHeight: 400 });
         }
-        function style_PersebatanTitik_1_0(feature) {
+        function style_PersebaranTitik_1_0(feature) {
             var context = {
                 feature: feature,
                 variables: {}
             };
             // Start of if blocks and style check logic
-            if (exp_PersebatanTitik_1rule0_eval_expression(context)) {
+            if (exp_PersebaranTitik_1rule0_eval_expression(context)) {
                   return {
-                pane: 'pane_PersebatanTitik_1',
+                pane: 'pane_PersebaranTitik_1',
                 shape: 'triangle',
-                radius: 12.0,
+                radius: 6.0,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(84,176,74,1.0)',
+                fillColor: 'rgba(255,0,88,1.0)',
                 interactive: true,
             };
                 }
-                else if (exp_PersebatanTitik_1rule1_eval_expression(context)) {
+                else if (exp_PersebaranTitik_1rule1_eval_expression(context)) {
                   return {
-                pane: 'pane_PersebatanTitik_1',
+                pane: 'pane_PersebaranTitik_1',
                 shape: 'triangle',
-                radius: 12.0,
+                radius: 6.0,
                 opacity: 1,
-                color: 'rgba(128,17,25,1.0)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(219,30,42,1.0)',
+                fillColor: 'rgba(0,255,0,1.0)',
                 interactive: true,
             };
                 }
-                else if (exp_PersebatanTitik_1rule2_eval_expression(context)) {
+                else if (exp_PersebaranTitik_1rule2_eval_expression(context)) {
                   return {
-                pane: 'pane_PersebatanTitik_1',
+                pane: 'pane_PersebaranTitik_1',
                 shape: 'triangle',
-                radius: 12.0,
+                radius: 6.0,
                 opacity: 1,
-                color: 'rgba(50,87,128,1.0)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(72,123,182,1.0)',
+                fillColor: 'rgba(43,37,255,1.0)',
                 interactive: true,
             };
                 }
@@ -223,193 +225,53 @@
                 return {fill: false, stroke: false};
             }
         }
-        map.createPane('pane_PersebatanTitik_1');
-        map.getPane('pane_PersebatanTitik_1').style.zIndex = 401;
-        map.getPane('pane_PersebatanTitik_1').style['mix-blend-mode'] = 'normal';
-        var layer_PersebatanTitik_1 = new L.geoJson(json_PersebatanTitik_1, {
+        map.createPane('pane_PersebaranTitik_1');
+        map.getPane('pane_PersebaranTitik_1').style.zIndex = 401;
+        map.getPane('pane_PersebaranTitik_1').style['mix-blend-mode'] = 'normal';
+        var layer_PersebaranTitik_1 = new L.geoJson(json_PersebaranTitik_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_PersebatanTitik_1',
-            layerName: 'layer_PersebatanTitik_1',
-            pane: 'pane_PersebatanTitik_1',
-            onEachFeature: pop_PersebatanTitik_1,
+            dataVar: 'json_PersebaranTitik_1',
+            layerName: 'layer_PersebaranTitik_1',
+            pane: 'pane_PersebaranTitik_1',
+            onEachFeature: pop_PersebaranTitik_1,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_PersebatanTitik_1_0(feature));
+                return L.shapeMarker(latlng, style_PersebaranTitik_1_0(feature));
             },
         });
-        bounds_group.addLayer(layer_PersebatanTitik_1);
-        map.addLayer(layer_PersebatanTitik_1);
+        bounds_group.addLayer(layer_PersebaranTitik_1);
+        map.addLayer(layer_PersebaranTitik_1);
         setBounds();
         var i = 0;
-        layer_PersebatanTitik_1.eachLayer(function(layer) {
+        layer_PersebaranTitik_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['NIM'] !== null?String('<div style="color: #ff7f00; font-size: 10pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['NIM']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_PersebatanTitik_1'});
+            layer.bindTooltip((layer.feature.properties['NIM'] !== null?String('<div style="color: #ff7f00; font-size: 7pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['NIM']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_PersebaranTitik_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_PersebatanTitik_1]);
+        resetLabels([layer_PersebaranTitik_1]);
         map.on("zoomend", function(){
-            resetLabels([layer_PersebatanTitik_1]);
+            resetLabels([layer_PersebaranTitik_1]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_PersebatanTitik_1]);
+            resetLabels([layer_PersebaranTitik_1]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_PersebatanTitik_1]);
+            resetLabels([layer_PersebaranTitik_1]);
         });
         </script>        
     </body>
 </html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peta Sebaran Titik Lokasi Kota Bandar Lampung</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-
-<style>
-  :root {
-    --primary: #1f3a5f;
-    --accent: #2f6fdb;
-    --bg: #f4f6fa;
-    --text: #222;
-    --card: #ffffff;
-    --border: #dfe3ea;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; font-family: "Segoe UI", Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); }
-
-  /* ===== HEADER / JUDUL ===== */
-  header {
-    background: linear-gradient(135deg, var(--primary), #2b5a94);
-    color: #fff;
-    padding: 14px 22px;
-    display: flex; flex-direction: column; gap: 2px;
-    box-shadow: 0 2px 6px rgba(0,0,0,.25);
-  }
-  header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: .3px; }
-  header p  { font-size: .85rem; opacity: .85; }
-
-  /* ===== LAYOUT ===== */
-  .layout { display: flex; height: calc(100% - 68px); }
-  aside {
-    width: 330px; min-width: 300px;
-    background: var(--card);
-    border-right: 1px solid var(--border);
-    overflow-y: auto;
-    padding: 16px;
-    display: flex; flex-direction: column; gap: 16px;
-  }
-  #map { flex: 1; }
-
-  .card { border: 1px solid var(--border); border-radius: 10px; padding: 14px; background: #fff; }
-  .card h2 {
-    font-size: .95rem; color: var(--primary);
-    margin-bottom: 8px; padding-bottom: 6px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-  }
-  .card p, .card li { font-size: .85rem; line-height: 1.55; }
-  .card ul { padding-left: 18px; margin-top: 4px; }
-
-  /* ===== LEGENDA ===== */
-  .legend-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 6px 4px; font-size: .88rem; cursor: pointer;
-  }
-  .legend-item input { accent-color: var(--accent); width: 16px; height: 16px; cursor: pointer; }
-  .legend-item svg { flex-shrink: 0; }
-  .legend-item .count { margin-left: auto; font-size: .75rem; color: #666; background: #eef1f6; padding: 1px 8px; border-radius: 10px; }
-
-  .stat-row { display: flex; gap: 8px; margin-top: 4px; }
-  .stat { flex: 1; text-align: center; background: #eef3fc; border-radius: 8px; padding: 8px 4px; }
-  .stat b { display: block; font-size: 1.15rem; color: var(--primary); }
-  .stat span { font-size: .72rem; color: #555; }
-
-  footer.note { font-size: .72rem; color: #777; text-align: center; margin-top: auto; }
-
-  /* ===== MARKER ===== */
-  .tri-icon { background: none; border: none; }
-  .tri-icon svg { filter: drop-shadow(0 1px 1px rgba(0,0,0,.45)); }
-  .lbl { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 11px; color: #000; padding: 0; }
-  .lbl::before { display: none; }
-
-  /* ===== LEGENDA DI ATAS PETA ===== */
-  .map-legend {
-    background: rgba(255,255,255,.95);
-    padding: 10px 12px;
-    border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0,0,0,.3);
-    font-size: .8rem; line-height: 1.7;
-  }
-  .map-legend h4 { font-size: .85rem; margin-bottom: 4px; color: var(--primary); }
-  .map-legend div { display: flex; align-items: center; gap: 8px; }
-
-  /* ===== RESPONSIF ===== */
-  @media (max-width: 800px) {
-    .layout { flex-direction: column-reverse; }
-    aside { width: 100%; max-height: 45%; border-right: none; border-top: 1px solid var(--border); }
-    #map { min-height: 55%; }
-    header h1 { font-size: 1.05rem; }
-  }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script>
-/* =========================================================
-   LEGENDA INTERAKTIF (filter checkbox)
-   ========================================================= */
-function updateStat() {
-  let tampil = 0;
-  Object.keys(layerKategori).forEach(k => {
-    if (map.hasLayer(layerKategori[k])) tampil += jumlah[k];
-  });
-  document.getElementById("tampil").textContent = tampil;
-}
-
-Object.keys(jumlah).forEach(k => {
-  document.getElementById("cnt-" + k).textContent = jumlah[k];
-});
-document.getElementById("total").textContent = DATA.length;
-updateStat();
-
-document.querySelectorAll("input[data-kat]").forEach(cb => {
-  cb.addEventListener("change", e => {
-    const layer = layerKategori[e.target.dataset.kat];
-    e.target.checked ? map.addLayer(layer) : map.removeLayer(layer);
-    updateStat();
-  });
-});
-
-/* =========================================================
-   LEGENDA MINI DI DALAM PETA
-   ========================================================= */
-const legendaPeta = L.control({ position: "bottomright" });
-legendaPeta.onAdd = function () {
-  const div = L.DomUtil.create("div", "map-legend");
-  let html = "<h4>Legenda</h4>";
-  Object.values(KATEGORI).forEach(k => {
-    html += `<div>
-      <svg width="16" height="16" viewBox="0 0 20 20"><polygon points="10,2 18,18 2,18" fill="${k.warna}" stroke="#111" stroke-width="1"/></svg>
-      ${k.nama}
-    </div>`;
-  });
-  div.innerHTML = html;
-  return div;
-};
-legendaPeta.addTo(map);
-</script>
-</body>
 </html>
     <!-- DESKRIPSI PETA -->
     <section class="card">
@@ -531,85 +393,6 @@ const KATEGORI = {
   B: { nama: "KOS", warna: "#00ff00" },
   C: { nama: "KONTRAKAN", warna: "#ee1155" }
 };
-/* =========================================================
-   INISIALISASI PETA
-   ========================================================= */
-const map = L.map("map", { zoomControl: true }).setView([-5.42, 105.27], 11);
-
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.control.scale({ imperial: false, position: "bottomleft" }).addTo(map);
-
-/* =========================================================
-   MARKER SEGITIGA
-   ========================================================= */
-function ikonSegitiga(warna) {
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
-      <polygon points="13,2 24,23 2,23" fill="${warna}" stroke="#222" stroke-width="1.2"/>
-    </svg>`;
-  return L.divIcon({
-    html: svg,
-    className: "tri-icon",
-    iconSize: [26, 26],
-    iconAnchor: [13, 20],
-    popupAnchor: [0, -18]
-  });
-}
-
-const layerKategori = { A: L.layerGroup(), B: L.layerGroup(), C: L.layerGroup() };
-const jumlah = { A: 0, B: 0, C: 0 };
-
-DATA.forEach(([id, kat, lat, lng]) => {
-  const k = KATEGORI[kat];
-  const m = L.marker([lat, lng], { icon: ikonSegitiga(k.warna) });
-
-  m.bindPopup(`
-    <b>Titik No. ${id}</b><br>
-    Kategori: ${k.nama}<br>
-    Lat: ${lat.toFixed(5)}<br>
-    Lng: ${lng.toFixed(5)}
-  `);
-
-  // label nomor untuk titik yang berdiri sendiri (di luar klaster)
-  if ([101, 93, 126, 139, 83, 120, 90, 33, 57, 16, 49, 8].includes(id)) {
-    m.bindTooltip(String(id), { permanent: true, direction: "top", offset: [0, -14], className: "lbl" });
-  }
-
-  m.addTo(layerKategori[kat]);
-  jumlah[kat]++;
-});
-
-Object.values(layerKategori).forEach(l => l.addTo(map));
-
-/* =========================================================
-   LEGENDA INTERAKTIF (filter checkbox)
-   ========================================================= */
-function updateStat() {
-  let tampil = 0;
-  Object.keys(layerKategori).forEach(k => {
-    if (map.hasLayer(layerKategori[k])) tampil += jumlah[k];
-  });
-  document.getElementById("tampil").textContent = tampil;
-}
-
-Object.keys(jumlah).forEach(k => {
-  document.getElementById("cnt-" + k).textContent = jumlah[k];
-});
-document.getElementById("total").textContent = DATA.length;
-updateStat();
-
-document.querySelectorAll("input[data-kat]").forEach(cb => {
-  cb.addEventListener("change", e => {
-    const layer = layerKategori[e.target.dataset.kat];
-    e.target.checked ? map.addLayer(layer) : map.removeLayer(layer);
-    updateStat();
-  });
-});
-
 /* =========================================================
    LEGENDA MINI DI DALAM PETA
    ========================================================= */
@@ -1170,120 +953,6 @@ body.pm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.
   }
 })();
 </script>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>WebGIS dengan Legenda Peta</title>
-  
-  <!-- FontAwesome Icons & Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* Style untuk Kotak Legenda Peta */
-    .map-legend {
-      position: fixed !important;
-      bottom: 24px;
-      right: 20px;
-      z-index: 9999 !important; /* Agar selalu di atas peta */
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 14px 18px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
-      font-family: 'Inter', sans-serif;
-      min-width: 170px;
-      pointer-events: auto;
-    }
-
-    .legend-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #e2e8f0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .legend-title i {
-      color: #3b82f6;
-    }
-
-    .legend-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      font-weight: 500;
-      color: #334155;
-    }
-
-    /* Lingkaran Simbol Warna Legenda */
-    .color-box {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      display: inline-block;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-      flex-shrink: 0;
-    }
-
-    .bg-kontrakan {
-      background-color: #ef4444; /* Merah */
-      border: 2px solid #b91c1c;
-    }
-
-    .bg-kos {
-      background-color: #22c55e; /* Hijau */
-      border: 2px solid #15803d;
-    }
-
-    .bg-rumah {
-      background-color: #3b82f6; /* Biru */
-      border: 1px solid #1d4ed8;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- KOTAK LEGENDA PETA (Letakkan di bawah tag <body>) -->
-  <div class="map-legend">
-    <div class="legend-title">
-      <i class="fa-solid fa-layer-group"></i> Legenda Peta
-    </div>
-    <ul class="legend-list">
-      <li class="legend-item">
-        <span class="color-box bg-kontrakan"></span>
-        <span>Kontrakan</span>
-      </li>
-      <li class="legend-item">
-        <span class="color-box bg-kos"></span>
-        <span>Kos</span>
-      </li>
-      <li class="legend-item">
-        <span class="color-box bg-rumah"></span>
-        <span>Rumah</span>
-      </li>
-    </ul>
-  </div>
-
-</body>
-</html>
 <!-- =====================================================================
   LEGENDA HUNIAN (segitiga): MERAH = Kontrakan · HIJAU = Kos · BIRU = Rumah
   CARA PAKAI:
