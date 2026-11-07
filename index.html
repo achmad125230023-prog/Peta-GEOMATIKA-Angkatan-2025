@@ -364,83 +364,6 @@
     header h1 { font-size: 1.05rem; }
   }
 </style>
-</head>
-<body>
-<!-- ============ JUDUL ============ -->
-<header>
-  <h1>Peta Sebaran Titik Tempat Tinggal Geomatika Angkatan 2025</h1>
-  <p>Provinsi Lampung &mdash; Visualisasi spasial berbasis WebGIS</p>
-</header>
-
-<div class="layout">
-
-  <!-- ============ PANEL SAMPING ============ -->
-  <aside>
-
-    <!-- DESKRIPSI PETA -->
-    <section class="card">
-      <h2>Deskripsi Peta</h2>
-      <p>
-        Peta ini menampilkan sebaran titik lokasi di wilayah Kota Bandar Lampung dan
-        sekitarnya. Setiap titik direpresentasikan dengan simbol segitiga yang
-        dibedakan berdasarkan warna sesuai kategorinya, dan diberi label nomor
-        identitas titik.
-      </p>
-      <ul>
-        <li>Titik terkonsentrasi di bagian timur &ndash; timur laut kota.</li>
-        <li>Beberapa titik tersebar di wilayah pinggiran (utara, barat, dan tenggara).</li>
-        <li>Klik simbol pada peta untuk melihat detail informasi.</li>
-      </ul>
-    </section>
-
-    <!-- LEGENDA -->
-    <section class="card">
-      <h2>Legenda</h2>
-      <label class="legend-item">
-        <input type="checkbox" data-kat="A" checked>
-        <svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 18,18 2,18" fill="#2b2bff" stroke="#111" stroke-width="1"/></svg>
-        <span>RUMAH (Biru)</span>
-        <span class="count" id="cnt-A">0</span>
-      </label>
-      <label class="legend-item">
-        <input type="checkbox" data-kat="B" checked>
-        <svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 18,18 2,18" fill="#00ff00" stroke="#111" stroke-width="1"/></svg>
-        <span>KOS (Hijau)</span>
-        <span class="count" id="cnt-B">0</span>
-      </label>
-      <label class="legend-item">
-        <input type="checkbox" data-kat="C" checked>
-        <svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 18,18 2,18" fill="#ee1155" stroke="#111" stroke-width="1"/></svg>
-        <span>KONTRAKAN (Merah)</span>
-        <span class="count" id="cnt-C">0</span>
-      </label>
-
-      <div class="stat-row">
-        <div class="stat"><b id="total">0</b><span>Total Titik</span></div>
-        <div class="stat"><b id="tampil">0</b><span>Ditampilkan</span></div>
-      </div>
-    </section>
-
-    <!-- INFORMASI PETA -->
-    <section class="card">
-      <h2>Informasi Peta</h2>
-      <p>
-        <b>Wilayah:</b> Kota Bandar Lampung, Lampung<br>
-        <b>Peta dasar:</b> OpenStreetMap<br>
-        <b>Sistem koordinat:</b> WGS 84 (EPSG:4326)<br>
-        <b>Simbol:</b> Titik (segitiga) berlabel nomor
-      </p>
-    </section>
-
-    <footer class="note">
-      Dibuat dengan Leaflet &middot; &copy; kontributor OpenStreetMap
-    </footer>
-  </aside>
-
-  <!-- ============ PETA ============ -->
-  <div id="map"></div>
-</div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 /* =========================================================
@@ -598,85 +521,6 @@ legendaPeta.addTo(map);
     header h1 { font-size: 1.05rem; }
   }
 </style>
-</head>
-
-<body>
-
-<!-- ============ JUDUL ============ -->
-<header>
-  <h1>Peta Sebaran Titik Tempat Tinggal Geomatika Angkatan 2025</h1>
-  <p>Provinsi Lampung &mdash; Visualisasi spasial berbasis WebGIS</p>
-</header>
-
-<div class="layout">
-
-  <!-- ============ PANEL SAMPING ============ -->
-  <aside>
-
-    <!-- DESKRIPSI PETA -->
-    <section class="card">
-      <h2>Deskripsi Peta</h2>
-      <p>
-        Peta ini menampilkan sebaran titik lokasi di wilayah Kota Bandar Lampung dan
-        sekitarnya. Setiap titik direpresentasikan dengan simbol segitiga yang
-        dibedakan berdasarkan warna sesuai kategorinya, dan diberi label nomor
-        identitas titik.
-      </p>
-      <ul>
-        <li>Titik terkonsentrasi di bagian timur &ndash; timur laut kota.</li>
-        <li>Beberapa titik tersebar di wilayah pinggiran (utara, barat, dan tenggara).</li>
-        <li>Klik simbol pada peta untuk melihat detail informasi.</li>
-      </ul>
-    </section>
-
-    <!-- LEGENDA -->
-    <section class="card">
-      <h2>Legenda</h2>
-      <label class="legend-item">
-        <input type="checkbox" data-kat="A" checked>
-        <svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 18,18 2,18" fill="#2b2bff" stroke="#111" stroke-width="1"/></svg>
-        <span>RUMAH (Biru)</span>
-        <span class="count" id="cnt-A">0</span>
-      </label>
-      <label class="legend-item">
-        <input type="checkbox" data-kat="B" checked>
-        <svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 18,18 2,18" fill="#00ff00" stroke="#111" stroke-width="1"/></svg>
-        <span>KOS (Hijau)</span>
-        <span class="count" id="cnt-B">0</span>
-      </label>
-      <label class="legend-item">
-        <input type="checkbox" data-kat="C" checked>
-        <svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 18,18 2,18" fill="#ee1155" stroke="#111" stroke-width="1"/></svg>
-        <span>KONTRAKAN (Merah)</span>
-        <span class="count" id="cnt-C">0</span>
-      </label>
-
-      <div class="stat-row">
-        <div class="stat"><b id="total">0</b><span>Total Titik</span></div>
-        <div class="stat"><b id="tampil">0</b><span>Ditampilkan</span></div>
-      </div>
-    </section>
-
-    <!-- INFORMASI PETA -->
-    <section class="card">
-      <h2>Informasi Peta</h2>
-      <p>
-        <b>Wilayah:</b> Kota Bandar Lampung, Lampung<br>
-        <b>Peta dasar:</b> OpenStreetMap<br>
-        <b>Sistem koordinat:</b> WGS 84 (EPSG:4326)<br>
-        <b>Simbol:</b> Titik (segitiga) berlabel nomor
-      </p>
-    </section>
-
-    <footer class="note">
-      Dibuat dengan Leaflet &middot; &copy; kontributor OpenStreetMap
-    </footer>
-  </aside>
-
-  <!-- ============ PETA ============ -->
-  <div id="map"></div>
-</div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 /* =========================================================
@@ -846,7 +690,7 @@ legendaPeta.addTo(map);
   </div>
  
   <div class="dbc">
-    <h3>Cari objek</h3>
+    <h3>Cari Nama</h3>
     <input type="search" id="dbSearch" placeholder="Cari di semua atribut…">
     <div class="dbres" id="dbResults"></div>
   </div>
@@ -1144,24 +988,6 @@ legendaPeta.addTo(map);
       color: #94a3b8;
     }
   </style>
-  <!-- Header Floating WebGIS Modern -->
-  <div class="webgis-header">
-    <i class="fa-solid fa-map-location-dot"></i>
-    <div>
-      <h1>WebGIS Dashboard</h1>
-      <p>Visualisasi Spasial Interaktif</p>
-    </div>
-  </div>
-<!-- =====================================================================
-  PEMOLES TAMPILAN UNTUK HASIL EKSPOR qgis2web (Leaflet)
-  CARA PAKAI:
-  1. Salin dulu index.html sebagai cadangan (index-backup.html).
-  2. Buka index.html, tempel SELURUH isi file ini tepat SEBELUM tag </body> paling bawah.
-  3. Ubah JUDUL / SUBJUDUL di bagian "KONFIGURASI" di bawah.
-  4. Simpan, buka lewat Live Server / localhost.
-  Aman dipakai bersama dashboard-qgis2web.html (tempel keduanya).
-====================================================================== -->
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ---------- 1. VARIABEL WARNA ---------- */
@@ -1458,3 +1284,145 @@ body.pm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.
 
 </body>
 </html>
+<!-- =====================================================================
+  LEGENDA HUNIAN (segitiga): MERAH = Kontrakan · HIJAU = Kos · BIRU = Rumah
+  CARA PAKAI:
+  1. Buka index.html hasil qgis2web.
+  2. Tempel SELURUH isi file ini tepat SEBELUM tag </body> paling bawah.
+  3. Simpan, muat ulang (Ctrl+F5).
+  Fitur: jumlah per kategori otomatis (dibaca dari kolom STATUS),
+         klik item legenda untuk menyembunyikan / menampilkan kategori.
+====================================================================== -->
+
+<style>
+  #lgHunian{
+    position:fixed;left:12px;bottom:70px;z-index:1150;min-width:190px;padding:12px 14px;border-radius:16px;
+    background:var(--pm-glass,rgba(255,255,255,.9));color:var(--pm-text,#14203a);
+    border:1px solid var(--pm-line,rgba(20,32,58,.12));box-shadow:var(--pm-shadow,0 10px 30px rgba(20,32,58,.22));
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    font-family:'Poppins',system-ui,sans-serif;font-size:12.5px;animation:lgUp .6s .4s both
+  }
+  @keyframes lgUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #lgHunian h4{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;
+    font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--pm-muted,#64708a)}
+  #lgHunian h4 button{border:none;background:none;color:inherit;font-size:16px;cursor:pointer;line-height:1}
+  #lgHunian .lgBody.hide{display:none}
+  .lgItem{display:flex;align-items:center;gap:10px;width:100%;padding:6px 8px;border:none;background:none;
+    color:inherit;font:inherit;text-align:left;border-radius:10px;cursor:pointer;transition:background .2s,opacity .2s}
+  .lgItem:hover{background:rgba(100,112,138,.14)}
+  .lgItem.off{opacity:.38}
+  .lgItem.off .lgName{text-decoration:line-through}
+  .lgItem svg{flex:none;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+  .lgName{flex:1;font-weight:500}
+  .lgCount{min-width:26px;text-align:center;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;
+    background:rgba(100,112,138,.16)}
+  .lgFoot{margin-top:6px;padding-top:6px;border-top:1px solid var(--pm-line,rgba(20,32,58,.12));
+    font-size:11px;color:var(--pm-muted,#64708a);display:flex;justify-content:space-between}
+</style>
+
+<div id="lgHunian">
+  <h4>Legenda <button id="lgFold" title="Lipat">–</button></h4>
+  <div class="lgBody" id="lgBody">
+    <!-- Segitiga SVG: ubah warna di atribut fill bila perlu -->
+    <button class="lgItem" data-k="kontrakan">
+      <svg width="20" height="18" viewBox="0 0 20 18"><polygon points="10,1 19,17 1,17" fill="#d62728" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span class="lgName">Kontrakan</span><span class="lgCount" id="cnt-kontrakan">–</span>
+    </button>
+    <button class="lgItem" data-k="kos">
+      <svg width="20" height="18" viewBox="0 0 20 18"><polygon points="10,1 19,17 1,17" fill="#4caf3a" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span class="lgName">Kos</span><span class="lgCount" id="cnt-kos">–</span>
+    </button>
+    <button class="lgItem" data-k="rumah">
+      <svg width="20" height="18" viewBox="0 0 20 18"><polygon points="10,1 19,17 1,17" fill="#3f6fbf" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span class="lgName">Rumah</span><span class="lgCount" id="cnt-rumah">–</span>
+    </button>
+    <div class="lgFoot"><span>Total</span><b id="cnt-total">–</b></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var KEYS = ['kontrakan','kos','rumah'];
+  var hidden = {};            // kategori yang sedang disembunyikan
+  var markers = [];           // [{m: marker, k: kategori}]
+
+  // lipat / buka legenda
+  $('lgFold').onclick = function(){
+    var b = $('lgBody'); b.classList.toggle('hide');
+    this.textContent = b.classList.contains('hide') ? '+' : '–';
+  };
+
+  // ambil kategori dari properti fitur (kolom STATUS / status / Status)
+  function kategori(f){
+    var p = (f.feature && f.feature.properties) || {};
+    var v = p.STATUS || p.status || p.Status || p.JENIS || p.jenis || '';
+    v = String(v).trim().toLowerCase();
+    return KEYS.indexOf(v) > -1 ? v : null;
+  }
+
+  // kumpulkan semua marker dari layer_* milik qgis2web
+  function collect(){
+    markers = [];
+    Object.keys(window).forEach(function(name){
+      if (name.indexOf('layer_') !== 0) return;
+      var lyr = window[name];
+      if (!lyr || !lyr.eachLayer) return;
+      lyr.eachLayer(function(f){
+        var k = kategori(f);
+        if (k) markers.push({ m:f, k:k });
+      });
+    });
+    return markers.length > 0;
+  }
+
+  function counts(){
+    var c = { kontrakan:0, kos:0, rumah:0 };
+    markers.forEach(function(o){ c[o.k]++; });
+    KEYS.forEach(function(k){ $('cnt-'+k).textContent = c[k]; });
+    $('cnt-total').textContent = c.kontrakan + c.kos + c.rumah;
+  }
+
+  // tampil / sembunyikan satu marker (ikon + label nomor)
+  function setVisible(o, show){
+    var d = show ? '' : 'none';
+    try{
+      if (o.m._icon) o.m._icon.style.display = d;
+      if (o.m._shadow) o.m._shadow.style.display = d;
+      if (o.m._path) o.m._path.style.display = d;                          // bila bukan marker ikon
+      var tt = o.m.getTooltip && o.m.getTooltip();
+      if (tt && tt._container) tt._container.style.display = d;            // label permanen
+    }catch(e){}
+  }
+  function applyFilter(){
+    markers.forEach(function(o){ setVisible(o, !hidden[o.k]); });
+  }
+
+  // klik item legenda = filter
+  document.querySelectorAll('.lgItem').forEach(function(btn){
+    btn.onclick = function(){
+      var k = btn.dataset.k;
+      hidden[k] = !hidden[k];
+      btn.classList.toggle('off', !!hidden[k]);
+      applyFilter();
+    };
+  });
+
+  // peta bisa menggambar ulang saat zoom -> terapkan filter lagi
+  function hook(){
+    if (window.map){
+      window.map.on('zoomend moveend layeradd', function(){
+        clearTimeout(window.__lgT);
+        window.__lgT = setTimeout(applyFilter, 120);
+      });
+    }
+  }
+
+  // tunggu qgis2web selesai membuat layer
+  var tries = 0, t = setInterval(function(){
+    tries++;
+    if (collect()){ clearInterval(t); counts(); hook(); }
+    else if (tries > 40){ clearInterval(t); /* legenda tetap tampil tanpa jumlah */ }
+  }, 250);
+})();
+</script>
