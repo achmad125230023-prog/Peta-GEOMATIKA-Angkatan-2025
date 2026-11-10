@@ -396,20 +396,6 @@ const KATEGORI = {
   B: { nama: "KOS", warna: "#00ff00" },
   C: { nama: "KONTRAKAN", warna: "#ee1155" }
 };
-const legendaPeta = L.control({ position: "topright" });
-legendaPeta.onAdd = function() {
-  const div = L.DomUtil.create("div", "map-legend");
-  div.innerHTML = "<h4>Legenda</h4>";
-  for (const [key, value] of Object.entries(KATEGORI)) {
-    div.innerHTML += `
-      <div>
-        <span style="display:inline-block;width:20px;height:20px;background:${value.warna};margin-right:8px;"></span>
-        ${value.nama}
-      </div>
-    `;
-  }
-  return div;
-};
 legendaPeta.addTo(map);
 </script>
 </body>
