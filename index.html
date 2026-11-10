@@ -22,6 +22,9 @@
         <title></title>
     </head>
     <body>
+      <img src="FIX.png" alt="Logo Angkatan Geomatika 2025" width="50" height="50" style="position: absolute; top: 10px; left: 160px; z-index: 1000; border-radius: 50%;">
+      <img src="logo gt.itera.jpg" alt="Logo GT ITERA" width="51" height="51" style="position: absolute; top: 10px; left: 105px; z-index: 1000; border-radius: 50%;">
+      <img src="Logo ITERAA.jpg" alt="Logo ITERAA" width="51" height="51" style="position: absolute; top: 10px; left: 50px; z-index: 1000; border-radius: 50%;">
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
@@ -393,20 +396,18 @@ const KATEGORI = {
   B: { nama: "KOS", warna: "#00ff00" },
   C: { nama: "KONTRAKAN", warna: "#ee1155" }
 };
-/* =========================================================
-   LEGENDA MINI DI DALAM PETA
-   ========================================================= */
-const legendaPeta = L.control({ position: "bottomright" });
-legendaPeta.onAdd = function () {
+const legendaPeta = L.control({ position: "topright" });
+legendaPeta.onAdd = function() {
   const div = L.DomUtil.create("div", "map-legend");
-  let html = "<h4>Legenda</h4>";
-  Object.values(KATEGORI).forEach(k => {
-    html += `<div>
-      <svg width="16" height="16" viewBox="0 0 20 20"><polygon points="10,2 18,18 2,18" fill="${k.warna}" stroke="#111" stroke-width="1"/></svg>
-      ${k.nama}
-    </div>`;
-  });
-  div.innerHTML = html;
+  div.innerHTML = "<h4>Legenda</h4>";
+  for (const [key, value] of Object.entries(KATEGORI)) {
+    div.innerHTML += `
+      <div>
+        <span style="display:inline-block;width:20px;height:20px;background:${value.warna};margin-right:8px;"></span>
+        ${value.nama}
+      </div>
+    `;
+  }
   return div;
 };
 legendaPeta.addTo(map);
@@ -1095,3 +1096,46 @@ body.pm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.
   }, 250);
 })();
 </script>
+<style>
+    /* 1. Mencegah skala ekstrem pada seluruh halaman */
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    /* 2. Mengunci ukuran tombol kontrol bawaan Leaflet (Zoom, Geolocation, Fullscreen, dll) */
+    .leaflet-control-zoom a, 
+    .leaflet-bar a, 
+    .leaflet-control button {
+        width: 30px !important;
+        height: 30px !important;
+        line-height: 30px !important;
+        font-size: 14px !important;
+        max-width: 30px !important;
+        max-height: 30px !important;
+    }
+
+    /* 3. Mengatur ikon di dalam tombol agar ukurannya tidak membesar */
+    .leaflet-control-zoom a span,
+    .leaflet-bar a img,
+    .leaflet-control button img {
+        font-size: 14px !important;
+        max-width: 18px !important;
+        max-height: 18px !important;
+    }
+
+    /* 4. Membatasi ukuran maksimal Panel Legenda dan Kontrol Kustom */
+    .leaflet-control-container .leaflet-control {
+        max-width: 250px !important;
+        transform: scale(1) !important; /* Menjaga skala elemen UI tetap normal */
+    }
+
+    /* 5. Mengatur ukuran maksimal box legenda agar fleksibel dan tidak berlebihan */
+    .info.legend, 
+    .leaflet-control-layers {
+        max-width: 220px !important;
+        max-height: 300px !important;
+        font-size: 12px !important;
+        overflow-y: auto; /* Tambahkan scrollbar jika isi legenda terlalu panjang */
+    }
+</style>
